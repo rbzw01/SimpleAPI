@@ -26,6 +26,7 @@ steps:
     displayName: "dotnet publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)"
     inputs:
       command: publish
+      # it's important to putter false if it's an API
       publishWebProjects: false
       projects: "src/SimpleAPI/SimpleAPI.csproj"
       arguments: "--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)"
